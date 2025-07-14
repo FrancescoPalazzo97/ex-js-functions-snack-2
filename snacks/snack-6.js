@@ -1,15 +1,16 @@
-const creaContatoreAutomatico = (interval) => {
+const creaContatoreAutomatico = t => {
 
     let count = 0;
 
-    const intervalId = setInterval(() => {
-        console.log(`Sono passati ${++count} secondi!!!`);
-    }, 1000);
-
-    setTimeout(() => {
-        clearInterval(intervalId);
-    }, interval);
-
+    return () => {
+        setInterval(() => {
+            console.log(`Il contatore è: ${++count}`)
+        }, t);
+    }
 }
 
-creaContatoreAutomatico(20000);
+const contatore = creaContatoreAutomatico(1000);
+const contatore2 = creaContatoreAutomatico(2000);
+
+contatore();
+contatore2();

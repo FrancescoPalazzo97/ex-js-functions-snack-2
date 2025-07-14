@@ -1,3 +1,3 @@
-const quadrato = num => num * num;
+const quadrato = num => num ** 2;
 
 console.log(quadrato(5));

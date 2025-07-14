@@ -5,17 +5,11 @@ const divisione = (num1, num2) => num1 / num2;
 
 const sequenzaOperazioni = (arr, interval) => {
 
-    let count = 0;
-
-    const intervalId = setInterval(() => {
-
-        arr[count]();
-        count++;
-
-        if (count === arr.length) {
-            clearInterval(intervalId);
-        }
-    }, interval);
+    arr.forEach((item, i) => {
+        setTimeout(() => {
+            item();
+        }, interval * i);
+    });
 };
 
 sequenzaOperazioni([

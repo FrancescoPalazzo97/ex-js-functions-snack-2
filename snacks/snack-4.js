@@ -1,9 +1,13 @@
 const createTimer = ms => {
-    return setTimeout(() => {
-        console.log(`Tempo scaduto!!!`);
-    }, ms);
+    return () => {
+        setTimeout(() => {
+            console.log(`Tempo scaduto!!!`);
+        }, ms);
+    }
 }
 
-createTimer(1000);
-createTimer(2000);
+const timer1s = createTimer(1000);
+const timer2s = createTimer(2000);
 
+timer1s();
+timer2s();
